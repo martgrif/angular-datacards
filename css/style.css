@@ -1,0 +1,115 @@
+.menulist{
+	left: -300px;
+	width: 300px;
+	position: fixed;
+	height: 100%;
+}
+
+.jumbotron{
+	background-image: url('https://unsplash.it/1024/768/');
+	height: 100%;
+	-moz-background-size: cover;
+	-webkit-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+body {
+  left: 0;
+  font-size: 15px;
+  font-family: "Times New Roman", Times, serif,;
+  margin: 0;
+  position: relative;
+}
+.menuicon{
+	color: #fff;
+	cursor: pointer;
+	font-size: 20px;
+	padding-top: 0px;
+	padding-bottom: 25px;
+	padding-left: 25px;
+	text-transform: uppercase;
+	text-decoration: none;
+	width: 110px;
+}
+
+.social{
+	padding-bottom: 25px;
+	padding-left: 25px;
+	list-style: none;
+	margin-top: 0px;
+	padding-top: 0px;
+}
+
+.menulist{
+	background: #000;
+	color: #fff;
+}
+
+ul{
+	list-style: none;
+}
+.menulist ul{
+	list-style: none;
+	font-size: 25px;
+	padding: 9px;
+	margin : 9px;
+}
+.icon-close{
+	padding: 9px;
+	margin : 9px;
+	font-size: 25px;
+	cursor: pointer;
+}
+.owl-carousel{
+	margin-left: 15px;
+}
+
+.green{
+	text-align: center;
+	color: #fff;
+	background-color: #55bb55;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+#models, #contact{
+	display: none;
+}
+
+.gl2{
+	color           : #fff;
+	background-color: #000;
+	opacity         : .7;
+	font-size       : 40px;
+	border-radius   : 5px;
+	margin          : 10px;
+	padding         : 10px;
+	box-shadow      : 0px 0px 12px gray;
+	bottom          : 0px;
+}
+
+.list{
+	background-color: #eee;
+	border-radius: 5px;
+	margin: 10px;
+	height: 450px;
+	text-align: center;
+}
+
+
+.bl, rl{
+	width: 100px;
+}
+.list:hover{
+	box-shadow: 0px 0px 5px black;
+}
+.list img{
+	padding-top: 15px;
+}
+
+.cols, .row{
+	margin-left: 20px;
+	margin-right: 20px;
+	padding-left: 20px;
+	padding-right: 20px;
+}

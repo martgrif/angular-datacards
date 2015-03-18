@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+	<title>Sortable Data Cards</title>
+	<meta charset='utf-8'>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/owl.theme.default.min.css">
+	<link rel="stylesheet" type="text/css" href="css/owl.carousel.css">
+	<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="scripts/jquery.velocity.min.js"></script>
+	<script type="text/javascript" src="scripts/owl.carousel.min.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.21/angular.min.js"></script>
+</head>
+<body  ng-controller="sellController as sell">
+	<div class="menulist">
+		<div class="icon-close  glyphicon glyphicon-remove"><span> Exit</span>
+		</div>
+		<hr>
+		<ul>
+			<li><img src="http://www.example.com/" width="128px" height="64"></li>
+			<div id="main">
+			<br>
+				<li><a href="http://example.com/">Home</a></li>
+				<li><a class="models" href="#">Phone Models</a></li>
+				<li><a href="http://example.com/">Reedem Vouchers</a></li>
+				<li><a class="contact" href="#">Contact Us</a></li>
+				<li><a href="http://example.com/">Blog</a></li>
+				<li><a href="http://www.example.com/">Login</a></li>
+			</div>
+			<div id="models">
+			<br>
+				<li><a class="back" href="#">Back</a></li>
+				<li><a href="http://example.com/">Phone Catalog</a></li>
+				<li><a href="http://example.com/">About our phones</a></li>
+			</div>
+			<div id="contact">
+			<br>
+				<li><a class="back" href="#">Back</a></li>
+				<li><a href="http://example.com/">Customer support</a></li>
+				<li><a href="http://example.com/">Sell our phones</a></li>
+				<li><a href="http://example.com/">Affiliates</a></li>
+				<li><a href="http://example.com/">Sell your phones</a></li>
+			</div>
+		</ul>
+	</div>
+	<!-- Body -->
+	<div class="jumbotron" id="top">
+		<div class='row'>
+			<div class="col-md-6 menuicon navbar-fixed">
+				<i class="fa fa-bars"></i>
+				Menu
+			</div>
+			<div class="col-md-6">
+				<ul class="nav nav-pills pull-right social">
+					<li><a href="https://www.facebook.com/"><img src="media/facebook.png" width="24px" height="24px"></a></li>
+					<li><a href="https://plus.google.com/"><img src="media/gplus.png" width="24px" height="24px"></a></li>
+					<li><a href="https://twitter.com/"><img src="media/twitter.png" width="24px" height="24px"></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="cols" ng-controller="phonesList as phones">
+		<div class="row">
+			<div class="col-md-6">
+				<h1>Smartphone Offers</h1>
+			</div>
+			<div class="col-md-6">
+				<a href="#"><span stle="margin: 15px" class="pull-right">Sign up</span></a>
+			</div>
+		</div>
+		<hr>
+		<div class="row">
+			<div class="col-md-6">
+			</div>
+			<div class="col-md-6">
+				<select class="pull-right" ng-model="order">
+					<option ng-click="reverse=false" value="title">Name: A to Z</option>
+<!--					<option ng-click="reverse=true" value="title">Name: Z to A</option>-->
+					<option ng-click="reverse=false" value="(price - save)">Price: Low to High</option>
+<!--					<option ng-click="reverse=true" value="(price - save)">Price: High to Low</option>-->
+					<option ng-click="reverse=false" value="code">Code</option>
+				</select>
+				<h4><span class=" pull-right">Sort by: </span></h4>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-6 col-md-3 list" ng-repeat="phone in phones.list | orderBy:order:reverse">
+					<a href="{{phone.url}}">
+							<img src="{{phone.img}}" width="230">
+							<h3>{{phone.title}}</h3>
+							<p>{{phone.code}}</p>
+							<p ng-hide="phone.save == 0">List Price {{phone.price | currency}}</p>
+							<p><b>{{phone.price - phone.save | currency}}</b></p>
+							<p ng-hide="phone.save == 0">Save {{phone.save | currency}}</p>
+					</a>
+							<button class="btn btn-primary" ng-click="sell.i = sell.i + 1">Buy Now</button>
+					
+			</div>
+		</div>
+			
+	</div>
+	<div class="green">
+		CopyLeft &copy 2014
+	</div>
+	<div class="nav navbar-fixed-bottom">
+		<a href="#top">
+			<span class="gl2 glyphicon glyphicon-chevron-up"></span>
+		</a>
+		<a href="http://example.com/">
+			<span class="gl2 glyphicon glyphicon-shopping-cart pull-right"></span><span class="gl2 glyphicon badge pull-right">{{sell.i}}</span>
+		</a>
+	</div>
+	<script type="text/javascript" src="scripts/app.js"></script>
+</body>
+</html>
